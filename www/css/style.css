@@ -1,0 +1,214 @@
+/* Empty. Add your own CSS if you like */
+.scale-in {
+	-webkit-transform: scale(0.8);
+  	transform: scale(0.8);
+  	opacity: 0;
+}
+.scale-in.ng-enter,
+.scale-in > .ng-enter {
+	-webkit-transition: all cubic-bezier(.1, .7, .1, 1) 400ms;
+ 	transition: all cubic-bezier(.1, .7, .1, 1) 400ms;
+}
+.scale-in.ng-enter-active,
+.scale-in > .ng-enter-active {
+	-webkit-transform: scale(1);
+ 	transform: scale(1);
+	opacity: 1;
+}
+.scale-in.ng-leave,
+.scale-in > .ng-leave {
+	-webkit-transition: all ease-in-out 250ms;
+ 	transition: all ease-in-out 250ms;
+}
+
+
+
+.bottom-panel {
+	position: fixed;
+
+	width: 100%;
+	bottom: 0px;
+}
+
+.bottom-panel button.button.button-block {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+#phone-form {
+	text-align: center;
+}
+
+#phone-form input {
+	margin-top: 15%;
+	width: 100%;
+	font-size: 30px;
+	line-height: 35px;
+	height: 60px;
+
+	text-align: center;
+
+	border-bottom: 1px solid #dedede;
+}
+
+
+
+
+/* spin! */
+/* Hack for ionicicons v2 (no animation code) */
+.ion-spin-animation { -webkit-animation: spin 1s infinite linear; -moz-animation: spin 1s infinite linear; -o-animation: spin 1s infinite linear; animation: spin 1s infinite linear; }
+
+@-moz-keyframes spin { 0% { -moz-transform: rotate(0deg); }
+    100% { -moz-transform: rotate(359deg); } }
+@-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(359deg); } }
+@-o-keyframes spin { 0% { -o-transform: rotate(0deg); }
+    100% { -o-transform: rotate(359deg); } }
+@-ms-keyframes spin { 0% { -ms-transform: rotate(0deg); }
+    100% { -ms-transform: rotate(359deg); } }
+@keyframes spin { 0% { transform: rotate(0deg); }
+    100% { transform: rotate(359deg); } }
+.ion-load-a.ion-spin-animation { -webkit-animation-timing-function: steps(8, start); -moz-animation-timing-function: steps(8, start); animation-timing-function: steps(8, start); }
+
+
+
+
+#loading-modal .spinner svg {
+	width: 120px !important;
+	height: 120px !important;
+}
+
+/*Spinner!!*/
+#loading-modal .spinner svg {
+	stroke: #EEBB00 !important;
+	margin-bottom: 10%;
+}
+#loading-modal .spinner svg .stop1 {
+	stop-color: #EEBB00 !important;
+}
+#loading-modal .spinner svg .stop2 {
+	stop-color: #EEBB00 !important;
+}
+
+#loading-modal ion-content {
+	text-align: center;
+	padding-top: 15%;
+}
+
+
+/*FORMS*/
+#products-form .description {
+	float: left;
+	width: 40%;
+}
+
+#products-form .price {
+	text-align: right;
+	float: left;
+	width: 30%;
+}
+
+
+#products-form .button {
+	color: #bbb;
+}
+
+
+#product-listing-scroll {
+	height: 300px;
+	width: 100%;
+}
+
+#product-listing {
+	margin-bottom: 0px;
+}
+
+#total-card {
+	margin-top: -1px;
+	font-weight: bold;
+}
+
+
+
+
+/*LOADING*/
+#loading-modal {
+	transition: background-color .5s;
+}
+#loading-modal.fail {
+	background-color: red;
+}
+
+#loading-modal.loading {
+	background-color: #efefef;
+}
+
+#loading-modal.success {
+	background-color: green;
+}
+
+
+
+#payments-list .ion-close {
+	color: red;
+}
+
+#payments-list .ion-checkmark {
+	color: green;
+}
+
+#payments-list .ion-clock {
+	color: #ddd;
+}
+
+#payments-list .ion-load-d {
+	-webkit-animation: spin 2s infinite linear; -moz-animation: spin 2s infinite linear; -o-animation: spin 2s infinite linear; animation: spin 2s infinite linear; 
+	color: #cdcdcd;
+}
+
+#payments-list .date {
+	font-size: 13px;
+	color: #aaa;
+}
+
+#payments-list .price {
+	font-size: 27px;
+	line-height: 31px;
+	font-weight: semibold;
+
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+#payments-list .description {
+	font-size: 17px;
+}
+
+.bar-energized {
+	color: #000 !important;
+}
+
+.button-energized {
+	color: #000 !important;
+}
+
+/*.bar-stable {
+	background-color: #EDBA10 !important;
+}
+
+.button-positive {
+	background-color: #816502;
+	border-color: #816502;
+}*/
+
+
+#success-logo-wrapper {
+	padding-top: 20px;
+	text-align: center;
+}
+
+#success-logo-wrapper > .ion-checkmark-circled {
+	font-size: 100px;
+	color: #33cd5f;
+}

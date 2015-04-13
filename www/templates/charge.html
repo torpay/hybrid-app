@@ -1,0 +1,127 @@
+<ion-view cache-view="false">
+	<ion-nav-buttons side="left">
+		<button class="button button-clear" ng-click="chargeForm.previousStep()">
+			<span ng-show="chargeForm.currentStepIndex === 0">fechar</span>
+			<span ng-show="chargeForm.currentStepIndex !== 0">anterior</span>
+		</button>
+	</ion-nav-buttons>
+
+	<ion-nav-title>
+		{{ chargeForm.currentStepTitle }}
+	</ion-nav-title>
+
+
+	<ion-nav-buttons side="right">
+		<button 
+			ng-show="phoneNumberComplete"
+			class="button button-clear"
+			ng-click="chargeForm.nextStep()"
+		>próximo</button>
+	</ion-nav-buttons>
+
+
+
+<!-- 	<ion-content scroll="false">
+	</ion-content>
+ -->
+
+	<ion-slide-box class="has-header" on-slide-changed="chargeForm.stepChanged($index)">
+		<ion-slide>
+			<form id="phone-form" ng-submit="chargeForm.nextStep()">
+
+				<div class="row row-center">
+
+					<div class="col">
+
+						<input id="phone-input" type="tel" ng-model="chargeForm.values.phone">
+					</div>
+
+				</div>
+
+				<div class="row row-center">
+					<div class="col">
+						<label>
+							insira o número do celular
+						</label>
+					</div>
+				</div>
+
+			</form>
+		</ion-slide>
+		<ion-slide>
+			<form id="products-form" ng-submit="chargeForm.nextStep()">
+
+<!-- 				<div 
+					class="row"
+
+					ng-repeat="product in productCart"
+				>
+					<div class="col-67">{{ product.name }}</div>
+					<div class="col-33">{{ product.price }}</div>
+
+				</div> -->
+
+				<ion-scroll id="product-listing-scroll" zooming="false" direction="y" has-bouncing="false">
+					<ul id="product-listing" class="card list list-inset">
+
+						<li ng-show="!productCart.length > 0" class="item item-icon-right" >
+							<div>
+								nenhum produto para checkout
+							</div>
+						</li>
+
+						<li class="item item-icon-right" ng-repeat="product in productCart track by $index">
+							<div class="description">
+								{{ product.name }}
+							</div>
+							<div class="price">
+								{{ product.price | currency : "R$ " : 2 }}
+							</div>
+							<a class="button button-icon icon ion-close"
+								ng-click="removeFromCart(product)"
+							></a>
+					    </li>
+					</ul>
+				</ion-scroll>
+
+				<div id="total-card" class="card list list-inset">
+
+					<div class="item item-icon-right">
+						<div class="description">total</div>
+						<div class="price">{{ total | currency : "R$ " : 2 }}</div>
+						<a ng-show="!productCart.length > 0" class="button button-icon icon ion-ios-cart-outline"></a>
+						<a ng-show="productCart.length > 0" class="button button-icon icon ion-ios-cart"></a>
+					</div>
+					
+				</div>
+
+
+
+			</form>
+		</ion-slide>
+	</ion-slide-box>
+
+
+
+	<div class="bottom-panel" ng-show="chargeForm.currentStepIndex === 1">
+
+
+		<div ng-repeat="products in availableProducts" class="row row-top">
+			<div class="col" ng-repeat="product in products">
+				<button
+					class="button button-block icon-left {{ product.icon }} button-energized"
+					ng-click="addToCart(product)"
+				>{{ product.name }}</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<button
+					class="button button-block button-assertive"
+					ng-click="charge()"
+				>Enviar cobrança</button>
+			</div>
+		</div>
+	</div>
+</ion-view>

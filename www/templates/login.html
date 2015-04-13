@@ -1,0 +1,31 @@
+<ion-view view-title="Login">
+	<ion-content>
+		<form name="form" ng-submit="loginForm.submit()" class="{{ status }}">
+			<div class="list">
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">email</span>
+					<input type="email" ng-model="loginForm.username">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">senha</span>
+					<input type="password" ng-model="loginForm.password">
+				</label>
+
+				<div class="padding">
+					<button
+						class="button button-block button-energized"
+						type="submit"
+					>login
+						<!-- <ion-spinner icon="spiral"></ion-spinner> -->
+						<!-- <i class="icon ion-load-c ion-spin-animation"></i> -->
+					</button>
+					<a
+						class="button button-clear button-block button-energized"
+						ui-sref="app.registration"
+					>nova conta</a>
+				</div>
+			</div>
+		</form>
+
+	</ion-content>
+</ion-view>

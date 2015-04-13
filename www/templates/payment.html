@@ -1,0 +1,50 @@
+<ion-modal-view 
+	id="payment-details-modal"
+	cache-view="false"
+>
+	<ion-header-bar>
+		<h1 class="title">{{ payment.total_value | currency : "R$ " : 2 }} - {{ payment.updated_at | date:"dd/MM" }}</h1>
+		<div class="buttons">
+			<button class="button button-clear" ui-sref="app.payments" ng-click="close()">fechar</button>
+		</div>
+	</ion-header-bar>
+	<ion-content class="has-header" scroll="false" padding="true">
+
+		<div class="list">
+
+			<div class="item item-divider">
+				cliente
+			</div>
+
+			<a class="item item-icon-left">
+				<i class="icon ion-person"></i>
+				{{ payment.consumer.name }}
+			</a>
+
+			<a class="item item-icon-left item-icon-right" href="tel:{{ payment.consumer.phone }}">
+				<i class="icon ion-chatbubble-working"></i>
+				{{ payment.consumer.phone }}
+				<i class="icon ion-ios-telephone"></i>
+			</a>
+
+			<div class="item item-divider">
+				pagamento
+			</div>
+
+			<a class="item item-icon-left">
+				<i class="icon ion-cash"></i>
+				{{ payment.total_value | currency : "R$ " : 2 }}
+			</a>
+
+			<a class="item item-icon-left">
+				<i class="icon ion-ios-cart"></i>
+				{{ payment.description }}
+				<span class="badge badge-balanced">{{ payment.items.length }}</span>
+			</a>
+
+		</div>
+		<div class="padding" id="success-logo-wrapper">
+			<i class="icon ion-checkmark-circled"></i>
+		</div>
+	</ion-content>
+</ion-modal-view>

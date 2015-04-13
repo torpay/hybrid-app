@@ -1,0 +1,37 @@
+<ion-view view-title="cadastro">
+	<ion-content>
+
+  		<form name="form" ng-submit="registrationForm.submit()">
+  			<div class="list">
+				<label class="item item-input">
+					<span class="input-label">telefone</span>
+					<input type="text" ng-model="registrationForm.phone">
+				</label>
+				<label class="item item-input item-select">
+					<span class="input-label">tipo</span>
+
+					<select ng-model="registrationForm.user_type">
+						<option value="merchant">Comerciante</option>
+						<option value="consumer">Comprador</option>
+					</select>
+				</label>
+				<label class="item item-input">
+					<span class="input-label">email</span>
+					<input type="email" ng-model="registrationForm.username">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">senha</span>
+					<input type="password" ng-model="registrationForm.password">
+				</label>
+
+  				<div class="padding">
+					<button
+						class="button button-block button-energized"
+						type="submit"
+					>Registrar</button>
+				</div>
+  			</div>
+  		</form>
+	
+	</ion-content>
+</ion-view>

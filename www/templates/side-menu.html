@@ -1,0 +1,68 @@
+<ion-side-menu side="left" ng-controller="SideMenuCtrl">
+	<ion-header-bar class="bar-stable">
+		<h1 class="title">Menu</h1>
+	</ion-header-bar>
+	<ion-content>
+
+		<div class="list">
+
+		  <a 
+		  	ng-if="!user.isLogged()"
+		  	class="item item-icon-left"
+
+		  	menu-close
+		  	ui-sref="app.login" 
+		  >
+		    <i class="icon ion-person"></i>
+		    login
+		  </a>
+
+		  <a 
+		  	ng-if="user.isLogged()"
+		  	class="item item-icon-left"
+		  	menu-close
+		  	ui-sref="app.charge"
+		  >
+		  	<i class="icon ion-cash"></i>
+
+		  	nova cobrança
+		  </a>
+
+		  <a 
+		  	class="item item-icon-left"
+		  	ng-if="user.isLogged()"
+
+		  	menu-close
+		  	ui-sref="app.payments"
+		  >
+			  <i class="icon ion-android-list"></i>
+			  histórico
+			  <span class="badge badge-balanced">2</span>
+		  </a>
+
+		  <a 
+		  	class="item item-icon-left"
+		  	menu-close 
+		  	ui-sref="app.registration"
+		  >
+		  	<i class="icon ion-person-add"></i>
+			<span ng-if="!user.isLogged()">registrar</span>
+			<span ng-if="user.isLogged()">cadastrar cliente</span>
+		  </a>
+
+			<a 
+				class="item item-icon-left"
+				ng-if="user.isLogged()"
+
+				menu-close
+				ng-click="logout()"
+			>
+				  <i class="icon ion-power"></i>
+				  logout
+			</a>
+
+
+		</div>
+
+	</ion-content>
+</ion-side-menu>

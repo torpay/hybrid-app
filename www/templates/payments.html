@@ -1,0 +1,41 @@
+<ion-view view-title="cobranças realizadas">
+	<ion-nav-buttons side="right">
+		<button class="button button-icon ion-plus-round" ng-click="openCharge()">
+		</button>
+	</ion-nav-buttons>
+	<div class="bar bar-subheader">
+		<button class="button button-energized button-block" ng-click="openCharge()">
+			Nova cobrança
+		</button>
+	</div>
+
+	<!-- contents -->
+	<ion-content padding="true" class="has-subheader">
+		<ion-list id="payments-list">
+
+			<ion-item 
+				class="card item item-icon-right item-text-wrap"
+				ng-repeat="payment in payments"
+				href="#/app/payments/{{ payment.id }}"
+
+				ng-click="viewDetails(payment)"
+			>
+
+				<div class="date">
+					{{ payment.updated_at | date:"dd/MM 'às' h:mma" }}
+				</div>
+				<div class="price">
+					{{ payment.total_value | currency : "R$ " : 2 }}
+				</div>
+				<div class="description">
+					{{ payment.description }}
+				</div>
+
+				<i ng-class="{ 'ion-checkmark': payment.status === 'approved', 'ion-close': payment.status === 'error', 'ion-clock': payment.status === 'pending', 'ion-load-d': payment.status === 'cancelled' }" class="icon"></i>
+
+			</ion-item>
+		</ion-list>
+	</ion-content>
+
+
+</ion-view>
